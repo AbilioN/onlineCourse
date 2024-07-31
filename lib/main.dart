@@ -51,13 +51,43 @@ class MyHomePage extends ConsumerWidget {
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          ref.read(appCount.notifier).state++;
-        },
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
+      floatingActionButton: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+          FloatingActionButton(
+            heroTag: 'page2',
+            onPressed: () {
+              // ref.read(appCount.notifier).state++;
+              Navigator.of(context).push(MaterialPageRoute(
+                  builder: (BuildContext context) => const SecondPage()));
+            },
+            tooltip: 'Increment',
+            child: const Icon(Icons.arrow_right_alt_rounded),
+          ),
+          FloatingActionButton(
+            heroTag: 'add',
+            onPressed: () {
+              ref.read(appCount.notifier).state++;
+            },
+            tooltip: 'Increment',
+            child: const Icon(Icons.add),
+          ),
+        ],
       ), // This trailing comma makes auto-formatting nicer for build methods.
+    );
+  }
+}
+
+class SecondPage extends StatelessWidget {
+  const SecondPage({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(),
+      body: Container(
+        child: Text("count value"),
+      ),
     );
   }
 }
