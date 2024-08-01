@@ -11,25 +11,32 @@ class Welcome extends StatelessWidget {
         children: [
           Text("Hello riverpod"),
           Container(
-            color: Colors.red,
+            color: Colors.white,
             // width: 400,
             // height: 300,
             child: PageView(
+              scrollDirection: Axis.horizontal,
               children: [
-                Text("Hello World"),
-                Text("Hello World"),
-                Text("Hello World"),
-                Text("Hello World"),
+                Container(
+                  width: 345,
+                  height: 345,
+                  child: Image.asset("assets/images/reading.png"),
+                ),
+                Container(
+                  width: 345,
+                  height: 345,
+                  child: Image.asset("assets/images/reading.png"),
+                ),
               ],
             ),
           ),
-          Positioned(
+          const Positioned(
             child: const Text("Widget One"),
             bottom: 150,
             left: 20,
           ),
-          Positioned(
-            child: const Text(
+          const Positioned(
+            child: Text(
               "Widget two",
               style: TextStyle(fontSize: 30),
             ),
