@@ -6,11 +6,12 @@ class OnboardingPageOne extends StatelessWidget {
   final String title;
   final String subTitle;
 
-  const OnboardingPageOne(
-      {super.key,
-      this.imagePath = "assets/images/reading.png",
-      this.title = "Title",
-      this.subTitle = "Subtitle"});
+  const OnboardingPageOne({
+    super.key,
+    required this.imagePath,
+    required this.title,
+    required this.subTitle,
+  });
 
   @override
   Widget build(BuildContext context) {

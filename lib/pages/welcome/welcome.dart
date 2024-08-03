@@ -1,4 +1,5 @@
 import 'package:another/common/widgets/text_widgets.dart';
+import 'package:another/pages/welcome/widgets.dart';
 import 'package:flutter/material.dart';
 
 class Welcome extends StatelessWidget {
@@ -32,24 +33,10 @@ class Welcome extends StatelessWidget {
                   )
                 ],
               ),
-              Column(
-                children: [
-                  Image.asset(
-                    "assets/images/reading.png",
-                    fit: BoxFit.fitWidth,
-                  ),
-                  Container(
-                    child: Text24(text: "First see Learning"),
-                    margin: EdgeInsets.only(top: 15),
-                  ),
-                  Container(
-                    margin: EdgeInsets.only(top: 15),
-                    child: Text16(
-                      text:
-                          "Forget about all paper all knolege in one learning",
-                    ),
-                  )
-                ],
+              OnboardingPageOne(
+                imagePath: "assets/images/reading.png",
+                title: "First see Learning",
+                subTitle: "My subtitle",
               ),
             ],
           ),
