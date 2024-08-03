@@ -20,7 +20,8 @@ class Welcome extends StatelessWidget {
                 controller: _controller,
                 imagePath: "assets/images/reading.png",
                 title: "First see Learning",
-                subTitle: "Forget about all paper all knolege in one learning",
+                subTitle:
+                    "Forget about all paper all knolege in one learning putting a litle bit of more text",
                 index: 1,
               ),
               OnboardingPageOne(
@@ -41,19 +42,6 @@ class Welcome extends StatelessWidget {
               ),
             ],
           ),
-          const Positioned(
-            child: const Text(""),
-            bottom: 150,
-            left: 20,
-          ),
-          const Positioned(
-            child: Text(
-              "",
-              style: TextStyle(fontSize: 30),
-            ),
-            bottom: 200,
-            right: 200,
-          )
         ],
       ),
     );

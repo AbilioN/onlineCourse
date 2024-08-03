@@ -59,8 +59,11 @@ class _NextButton extends StatelessWidget {
         print('index $index');
 
         if (index < 3) {
-          controller.animateToPage(index,
-              duration: Duration(milliseconds: 300), curve: Curves.bounceIn);
+          controller.animateToPage(
+            index,
+            duration: const Duration(milliseconds: 300),
+            curve: Curves.easeIn,
+          );
         }
       },
       child: Container(
