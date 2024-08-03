@@ -1,3 +1,4 @@
+import 'package:another/common/utils/colors.dart';
 import 'package:another/common/widgets/app_shadows.dart';
 import 'package:another/common/widgets/text_widgets.dart';
 import 'package:flutter/material.dart';
@@ -23,11 +24,11 @@ class OnboardingPageOne extends StatelessWidget {
           fit: BoxFit.fitWidth,
         ),
         Container(
-          child: Text24(text: title),
           margin: EdgeInsets.only(top: 15),
+          child: Text24(text: title),
         ),
         Container(
-          margin: EdgeInsets.only(top: 15),
+          margin: const EdgeInsets.only(top: 15),
           child: Text16(
             text: subTitle,
           ),
@@ -52,6 +53,12 @@ class _NextButton extends StatelessWidget {
         right: 25,
       ),
       decoration: AppBoxDecorations.customBoxDecoration(),
+      child: const Center(
+        child: Text16(
+          text: "Next",
+          color: AppColors.primaryBackground,
+        ),
+      ),
     );
   }
 }
