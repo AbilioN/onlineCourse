@@ -1,3 +1,4 @@
+import 'package:another/common/utils/colors.dart';
 import 'package:another/common/widgets/text_widgets.dart';
 import 'package:another/pages/welcome/widgets.dart';
 import 'package:dots_indicator/dots_indicator.dart';
@@ -13,8 +14,6 @@ class Welcome extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final index = ref.watch(indexProvider);
-
-    print(index);
     return Container(
       // color: Colors.red,
       child: SafeArea(
@@ -60,17 +59,19 @@ class Welcome extends ConsumerWidget {
                   ],
                 ),
                 Positioned(
+                  bottom: 50,
                   child: DotsIndicator(
                     position: index,
                     dotsCount: 3,
                     mainAxisAlignment: MainAxisAlignment.center,
                     decorator: DotsDecorator(
+                        color: AppColors.primaryElement,
+                        activeColor: AppColors.primarySecondaryElementText,
                         size: const Size.square(9.0),
                         activeSize: const Size(24.0, 8.0),
                         activeShape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(5.0))),
                   ),
-                  bottom: 50,
                 )
               ],
             ),
