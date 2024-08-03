@@ -1,34 +1,57 @@
+import 'package:another/common/widgets/text_widgets.dart';
 import 'package:flutter/material.dart';
 
 class Welcome extends StatelessWidget {
   const Welcome({super.key});
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
       body: Stack(
         children: [
-          Text("Hello riverpod"),
-          Container(
-            color: Colors.white,
-            // width: 400,
-            // height: 300,
-            child: PageView(
-              scrollDirection: Axis.horizontal,
-              children: [
-                Container(
-                  width: 345,
-                  height: 345,
-                  child: Image.asset("assets/images/reading.png"),
-                ),
-                Container(
-                  width: 345,
-                  height: 345,
-                  child: Image.asset("assets/images/reading.png"),
-                ),
-              ],
-            ),
+          PageView(
+            scrollDirection: Axis.horizontal,
+            children: [
+              // first page
+              Column(
+                children: [
+                  Image.asset(
+                    "assets/images/reading.png",
+                    fit: BoxFit.fitWidth,
+                  ),
+                  Container(
+                    child: Text24(text: "First see Learning"),
+                    margin: EdgeInsets.only(top: 15),
+                  ),
+                  Container(
+                    margin: EdgeInsets.only(top: 15),
+                    child: Text16(
+                      text:
+                          "Forget about all paper all knolege in one learning",
+                    ),
+                  )
+                ],
+              ),
+              Column(
+                children: [
+                  Image.asset(
+                    "assets/images/reading.png",
+                    fit: BoxFit.fitWidth,
+                  ),
+                  Container(
+                    child: Text24(text: "First see Learning"),
+                    margin: EdgeInsets.only(top: 15),
+                  ),
+                  Container(
+                    margin: EdgeInsets.only(top: 15),
+                    child: Text16(
+                      text:
+                          "Forget about all paper all knolege in one learning",
+                    ),
+                  )
+                ],
+              ),
+            ],
           ),
           const Positioned(
             child: const Text("Widget One"),
@@ -47,4 +70,8 @@ class Welcome extends StatelessWidget {
       ),
     );
   }
+}
+
+class text24Normal {
+  const text24Normal();
 }
