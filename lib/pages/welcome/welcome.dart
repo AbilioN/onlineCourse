@@ -1,11 +1,11 @@
 import 'package:another/common/utils/colors.dart';
-import 'package:another/common/widgets/text_widgets.dart';
+import 'package:another/pages/notifier/welcome_notifier.dart';
 import 'package:another/pages/welcome/widgets.dart';
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-final indexProvider = StateProvider<int>((ref) => 0);
+// final indexProvider = StateProvider<int>((ref) => 0);
 
 class Welcome extends ConsumerWidget {
   Welcome({super.key});
@@ -13,7 +13,7 @@ class Welcome extends ConsumerWidget {
   final PageController _controller = PageController();
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final index = ref.watch(indexProvider);
+    final index = ref.watch(indexDotProvider);
     return Container(
       // color: Colors.red,
       child: SafeArea(
@@ -29,7 +29,7 @@ class Welcome extends ConsumerWidget {
                   controller: _controller,
                   scrollDirection: Axis.horizontal,
                   onPageChanged: (value) {
-                    ref.read(indexProvider.notifier).state = value;
+                    ref.read(indexDotProvider.notifier).changeIndex(value);
                   },
                   children: [
                     OnboardingPageOne(
@@ -80,8 +80,4 @@ class Welcome extends ConsumerWidget {
       ),
     );
   }
-}
-
-class text24Normal {
-  const text24Normal();
 }
