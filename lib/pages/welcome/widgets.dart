@@ -46,13 +46,12 @@ class _NextButton extends StatelessWidget {
     return Container(
       width: 325,
       height: 50,
-      color: Colors.green,
       margin: const EdgeInsets.only(
         top: 100,
         left: 25,
         right: 25,
       ),
-      // decoration: AppBoxShadow(),
+      decoration: AppBoxDecorations.customBoxDecoration(),
     );
   }
 }
