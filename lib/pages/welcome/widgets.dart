@@ -39,14 +39,14 @@ class OnboardingPageOne extends StatelessWidget {
 }
 
 class _NextButton extends StatelessWidget {
-  const _NextButton({super.key});
+  const _NextButton();
 
   @override
   Widget build(BuildContext context) {
     return Container(
       width: 325,
       height: 50,
-      color: Colors.blue,
+      color: Colors.green,
       margin: const EdgeInsets.only(
         top: 100,
         left: 25,
