@@ -1,5 +1,6 @@
 import 'package:another/common/widgets/text_widgets.dart';
 import 'package:another/pages/welcome/widgets.dart';
+import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 
 class Welcome extends StatelessWidget {
@@ -16,7 +17,9 @@ class Welcome extends StatelessWidget {
           body: Container(
             margin: const EdgeInsets.only(top: 30),
             child: Stack(
+              alignment: Alignment.topCenter,
               children: [
+                // showing pages
                 PageView(
                   controller: _controller,
                   scrollDirection: Axis.horizontal,
@@ -47,6 +50,18 @@ class Welcome extends StatelessWidget {
                     ),
                   ],
                 ),
+                Positioned(
+                  child: DotsIndicator(
+                    dotsCount: 3,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    decorator: DotsDecorator(
+                        size: const Size.square(9.0),
+                        activeSize: const Size(24.0, 8.0),
+                        activeShape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(5.0))),
+                  ),
+                  bottom: 50,
+                )
               ],
             ),
           ),
