@@ -2,13 +2,19 @@ import 'package:another/common/widgets/text_widgets.dart';
 import 'package:another/pages/welcome/widgets.dart';
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class Welcome extends StatelessWidget {
+final indexProvider = StateProvider<int>((ref) => 0);
+
+class Welcome extends ConsumerWidget {
   Welcome({super.key});
 
   final PageController _controller = PageController();
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final index = ref.watch(indexProvider);
+
+    print(index);
     return Container(
       // color: Colors.red,
       child: SafeArea(
@@ -23,6 +29,9 @@ class Welcome extends StatelessWidget {
                 PageView(
                   controller: _controller,
                   scrollDirection: Axis.horizontal,
+                  onPageChanged: (value) {
+                    ref.read(indexProvider.notifier).state = value;
+                  },
                   children: [
                     OnboardingPageOne(
                       controller: _controller,
@@ -52,6 +61,7 @@ class Welcome extends StatelessWidget {
                 ),
                 Positioned(
                   child: DotsIndicator(
+                    position: index,
                     dotsCount: 3,
                     mainAxisAlignment: MainAxisAlignment.center,
                     decorator: DotsDecorator(
