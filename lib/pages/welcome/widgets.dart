@@ -75,9 +75,9 @@ class _NextButton extends StatelessWidget {
           right: 25,
         ),
         decoration: AppBoxDecorations.customBoxDecoration(),
-        child: const Center(
+        child: Center(
           child: Text16(
-            text: "Next",
+            text: index < 3 ? "Next" : "Get Started",
             color: AppColors.primaryBackground,
           ),
         ),
