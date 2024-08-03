@@ -33,13 +33,13 @@ class Welcome extends StatelessWidget {
             ],
           ),
           const Positioned(
-            child: const Text("Widget One"),
+            child: const Text(""),
             bottom: 150,
             left: 20,
           ),
           const Positioned(
             child: Text(
-              "Widget two",
+              "",
               style: TextStyle(fontSize: 30),
             ),
             bottom: 200,

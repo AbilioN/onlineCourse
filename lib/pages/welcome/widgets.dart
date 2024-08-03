@@ -1,3 +1,4 @@
+import 'package:another/common/widgets/app_shadows.dart';
 import 'package:another/common/widgets/text_widgets.dart';
 import 'package:flutter/material.dart';
 
@@ -30,8 +31,28 @@ class OnboardingPageOne extends StatelessWidget {
           child: Text16(
             text: subTitle,
           ),
-        )
+        ),
+        _NextButton()
       ],
+    );
+  }
+}
+
+class _NextButton extends StatelessWidget {
+  const _NextButton({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 325,
+      height: 50,
+      color: Colors.blue,
+      margin: const EdgeInsets.only(
+        top: 100,
+        left: 25,
+        right: 25,
+      ),
+      // decoration: AppBoxShadow(),
     );
   }
 }
