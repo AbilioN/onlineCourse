@@ -13,30 +13,22 @@ class Welcome extends StatelessWidget {
           PageView(
             scrollDirection: Axis.horizontal,
             children: [
-              // first page
-              Column(
-                children: [
-                  Image.asset(
-                    "assets/images/reading.png",
-                    fit: BoxFit.fitWidth,
-                  ),
-                  Container(
-                    child: Text24(text: "First see Learning"),
-                    margin: EdgeInsets.only(top: 15),
-                  ),
-                  Container(
-                    margin: EdgeInsets.only(top: 15),
-                    child: Text16(
-                      text:
-                          "Forget about all paper all knolege in one learning",
-                    ),
-                  )
-                ],
-              ),
               OnboardingPageOne(
                 imagePath: "assets/images/reading.png",
                 title: "First see Learning",
-                subTitle: "My subtitle",
+                subTitle: "Forget about all paper all knolege in one learning",
+              ),
+              OnboardingPageOne(
+                imagePath: "assets/images/man.png",
+                title: "Connect with Everyone",
+                subTitle:
+                    "Allways keep in touch with your tutor and friends. Lets get connected.",
+              ),
+              OnboardingPageOne(
+                imagePath: "assets/images/boy.png",
+                title: "Always facinated learning",
+                subTitle:
+                    "Anywhere and anytime at your descretion. So study wherever you can",
               ),
             ],
           ),
