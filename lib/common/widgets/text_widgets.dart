@@ -46,3 +46,26 @@ class Text16 extends StatelessWidget {
     );
   }
 }
+
+class Text14 extends StatelessWidget {
+  final String text;
+  final Color color;
+  const Text14({
+    super.key,
+    required this.text,
+    this.color = AppColors.primaryThreeElementText,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      text,
+      textAlign: TextAlign.center,
+      style: TextStyle(
+        color: color,
+        fontSize: 14,
+        fontWeight: FontWeight.normal,
+      ),
+    );
+  }
+}

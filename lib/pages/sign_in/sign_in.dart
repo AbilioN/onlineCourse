@@ -1,3 +1,5 @@
+import 'package:another/common/widgets/text_widgets.dart';
+import 'package:another/pages/sign_in/widgets/sign_in_widgets.dart';
 import 'package:flutter/material.dart';
 
 class SignIn extends StatelessWidget {
@@ -8,10 +10,14 @@ class SignIn extends StatelessWidget {
     return Container(
       child: SafeArea(
           child: Scaffold(
-        appBar: AppBar(),
-        backgroundColor: Colors.white,
-        body: Center(child: Text("Sign in page")),
-      )),
+              appBar: SignInComponents.buildAppBar(),
+              backgroundColor: Colors.white,
+              body: Column(
+                children: [
+                  SignInComponents.thirdPartyLogin(),
+                  Text14(text: "Or use your email to Login")
+                ],
+              ))),
     );
   }
 }

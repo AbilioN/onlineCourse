@@ -66,7 +66,7 @@ class _NextButton extends StatelessWidget {
         } else {
           // Navigator.of(context)
           //     .push(MaterialPageRoute(builder: (context) => SignIn()));
-          Navigator.pushNamed(context, "signIn");
+          Navigator.pushNamed(context, "/signIn");
         }
       },
       child: Container(
