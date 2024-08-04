@@ -1,3 +1,4 @@
+import 'package:another/pages/sign_in/sign_in.dart';
 import 'package:another/pages/welcome/welcome.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -18,7 +19,11 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: Welcome(),
+      initialRoute: "/",
+      routes: {
+        "/": (context) => Welcome(),
+        "signIn": (context) => SignIn(),
+      },
     );
   }
 }

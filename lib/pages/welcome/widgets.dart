@@ -1,6 +1,7 @@
 import 'package:another/common/utils/colors.dart';
 import 'package:another/common/widgets/app_shadows.dart';
 import 'package:another/common/widgets/text_widgets.dart';
+import 'package:another/pages/sign_in/sign_in.dart';
 import 'package:flutter/material.dart';
 
 class OnboardingPageOne extends StatelessWidget {
@@ -56,14 +57,16 @@ class _NextButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        print('index $index');
-
         if (index < 3) {
           controller.animateToPage(
             index,
             duration: const Duration(milliseconds: 300),
             curve: Curves.easeIn,
           );
+        } else {
+          // Navigator.of(context)
+          //     .push(MaterialPageRoute(builder: (context) => SignIn()));
+          Navigator.pushNamed(context, "signIn");
         }
       },
       child: Container(

@@ -1,5 +1,5 @@
 import 'package:another/common/utils/colors.dart';
-import 'package:another/pages/notifier/welcome_notifier.dart';
+import 'package:another/pages/welcome/notifier/welcome_notifier.dart';
 import 'package:another/pages/welcome/widgets.dart';
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
