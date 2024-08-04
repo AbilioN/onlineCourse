@@ -21,4 +21,15 @@ class AppBoxDecorations {
       ],
     );
   }
+
+  static BoxDecoration appBoxShadowTextField({
+    Color color = AppColors.primaryBackground,
+    double radius = 15,
+    Color borderColor = AppColors.primaryFourElementText,
+  }) {
+    return BoxDecoration(
+        color: color,
+        borderRadius: BorderRadius.circular(radius),
+        border: Border.all(color: borderColor));
+  }
 }

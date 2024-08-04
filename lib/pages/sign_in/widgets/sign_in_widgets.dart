@@ -1,4 +1,5 @@
 import 'package:another/common/utils/colors.dart';
+import 'package:another/common/widgets/app_shadows.dart';
 import 'package:another/common/widgets/text_widgets.dart';
 import 'package:flutter/material.dart';
 
@@ -21,7 +22,7 @@ class SignInComponents {
 
   static Widget thirdPartyLogin() {
     return Container(
-      margin: EdgeInsets.only(left: 80, right: 80, top: 40, bottom: 20),
+      margin: const EdgeInsets.only(left: 80, right: 80, top: 40, bottom: 20),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
@@ -36,10 +37,27 @@ class SignInComponents {
   static Widget _loginButton(String imagePath) {
     return GestureDetector(
       onTap: () {},
-      child: Container(
+      child: SizedBox(
         height: 40,
         width: 40,
         child: Image.asset(imagePath),
+      ),
+    );
+  }
+
+  static Widget appTextField({String text = ""}) {
+    return Container(
+      padding: const EdgeInsets.only(left: 25, right: 25),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text14(text: text),
+          Container(
+            width: 350,
+            height: 50,
+            decoration: AppBoxDecorations.appBoxShadowTextField(),
+          )
+        ],
       ),
     );
   }
