@@ -5,22 +5,6 @@ import 'package:another/common/widgets/text_widgets.dart';
 import 'package:flutter/material.dart';
 
 class SignInComponents {
-  static AppBar buildAppBar() {
-    return AppBar(
-      bottom: PreferredSize(
-        child: Container(
-          color: Colors.grey.withOpacity(0.3),
-          height: 1,
-        ),
-        preferredSize: Size.fromHeight(1),
-      ),
-      title: const Text16(
-        text: "Login",
-        color: AppColors.primaryText,
-      ),
-    );
-  }
-
   static Widget thirdPartyLogin() {
     return Container(
       margin: const EdgeInsets.only(left: 80, right: 80, top: 40, bottom: 20),

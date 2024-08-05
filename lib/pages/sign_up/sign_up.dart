@@ -1,4 +1,5 @@
 import 'package:another/common/widgets/button_widgets.dart';
+import 'package:another/common/widgets/components.dart';
 import 'package:another/common/widgets/text_widgets.dart';
 import 'package:another/pages/sign_in/widgets/sign_in_widgets.dart';
 import 'package:flutter/material.dart';
@@ -11,7 +12,7 @@ class SignUp extends StatelessWidget {
     return Container(
       child: SafeArea(
           child: Scaffold(
-              appBar: SignInComponents.buildAppBar(),
+              appBar: Components.buildAppBar(),
               body: SingleChildScrollView(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -40,7 +41,6 @@ class SignUp extends StatelessWidget {
                     SizedBox(
                       height: 10,
                     ),
-
                     Container(
                       margin: EdgeInsets.only(left: 25),
                       child: TextUnderline(text: "Forgot password?"),
