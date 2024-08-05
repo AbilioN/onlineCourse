@@ -64,8 +64,6 @@ class _NextButton extends StatelessWidget {
             curve: Curves.easeIn,
           );
         } else {
-          // Navigator.of(context)
-          //     .push(MaterialPageRoute(builder: (context) => SignIn()));
           Navigator.pushNamed(context, "/signIn");
         }
       },

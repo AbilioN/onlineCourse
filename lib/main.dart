@@ -1,3 +1,4 @@
+import 'package:another/common/utils/app_styles.dart';
 import 'package:another/pages/sign_in/sign_in.dart';
 import 'package:another/pages/welcome/welcome.dart';
 import 'package:flutter/material.dart';
@@ -15,10 +16,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
+      theme: AppTheme.appThemeData,
       initialRoute: "/",
       routes: {
         "/": (context) => Welcome(),

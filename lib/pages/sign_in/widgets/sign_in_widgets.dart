@@ -9,7 +9,7 @@ class SignInComponents {
     return AppBar(
       bottom: PreferredSize(
         child: Container(
-          color: Colors.red,
+          color: Colors.grey.withOpacity(0.3),
           height: 1,
         ),
         preferredSize: Size.fromHeight(1),

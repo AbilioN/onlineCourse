@@ -11,7 +11,9 @@ class ButtonWidgets {
     bool isLogin = true,
   }) {
     return GestureDetector(
-      onTap: () {},
+      onTap: () {
+        print("hello");
+      },
       child: Container(
         width: 325,
         height: 50,

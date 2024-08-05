@@ -12,7 +12,6 @@ class SignIn extends StatelessWidget {
       child: SafeArea(
           child: Scaffold(
               appBar: SignInComponents.buildAppBar(),
-              backgroundColor: Colors.white,
               body: SingleChildScrollView(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
