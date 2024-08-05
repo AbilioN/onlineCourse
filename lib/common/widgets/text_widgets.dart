@@ -69,3 +69,31 @@ class Text14 extends StatelessWidget {
     );
   }
 }
+
+class TextUnderline extends StatelessWidget {
+  final String text;
+  final Color color;
+
+  const TextUnderline(
+      {super.key,
+      required this.text,
+      this.color = AppColors.primaryBackground});
+
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+
+    return GestureDetector(
+      onTap: () {},
+      child: Text(
+        text,
+        style: const TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 12,
+            color: AppColors.primaryText,
+            decoration: TextDecoration.underline,
+            decorationColor: AppColors.primaryText),
+      ),
+    );
+  }
+}
