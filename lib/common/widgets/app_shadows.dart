@@ -3,14 +3,17 @@ import 'package:flutter/material.dart';
 
 class AppBoxDecorations {
   // Method to return the customized BoxDecoration
-  static BoxDecoration customBoxDecoration(
-      {Color color = AppColors.primaryElement,
-      double radius = 15,
-      double sR = 1,
-      double bR = 2}) {
+  static BoxDecoration customBoxDecoration({
+    Color color = AppColors.primaryElement,
+    double radius = 15,
+    double sR = 1,
+    double bR = 2,
+    BoxBorder? border,
+  }) {
     return BoxDecoration(
       color: color,
       borderRadius: BorderRadius.circular(radius),
+      border: border,
       boxShadow: [
         BoxShadow(
           color: Colors.grey.withOpacity(0.1),
