@@ -21,38 +21,38 @@ class SignUp extends StatelessWidget {
                     const Center(
                       child: Text14(text: "Or use your email to Login"),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 15,
                     ),
                     // email
-                    SignInComponents.appTextField(
+                    Components.appTextField(
                         text: "Email",
                         iconName: "assets/icons/user.png",
                         hintText: "Enter your email address"),
-                    SizedBox(
+                    const SizedBox(
                       height: 20,
                     ),
-                    SignInComponents.appTextField(
+                    Components.appTextField(
                       text: "Password",
                       iconName: "assets/icons/lock.png",
                       hintText: "Enter your password",
                       obscureTexts: true,
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 10,
                     ),
                     Container(
-                      margin: EdgeInsets.only(left: 25),
-                      child: TextUnderline(text: "Forgot password?"),
+                      margin: const EdgeInsets.only(left: 25),
+                      child: const TextUnderline(text: "Forgot password?"),
                     ),
 
-                    SizedBox(
+                    const SizedBox(
                       height: 100,
                     ),
                     Center(
                       child: ButtonWidgets.appButton(buttonName: "Login"),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 20,
                     ),
                     Center(
