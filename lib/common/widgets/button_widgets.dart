@@ -14,15 +14,17 @@ class ButtonWidgets {
   }) {
     return GestureDetector(
       onTap: () {
-        Navigator.push(
-            context!,
-            MaterialPageRoute(
-                builder: (context) => Scaffold(
-                      appBar: Components.buildAppBar(),
-                      body: Container(
-                        color: Colors.red,
-                      ),
-                    )));
+        Navigator.pushNamed(context!, "/signIn");
+
+        // Navigator.push(
+        //     context!,
+        //     MaterialPageRoute(
+        //         builder: (context) => Scaffold(
+        //               appBar: Components.buildAppBar(),
+        //               body: Container(
+        //                 color: Colors.red,
+        //               ),
+        //             )));
       },
       child: Container(
         width: 325,
