@@ -60,6 +60,7 @@ class SignIn extends StatelessWidget {
                   child: ButtonWidgets.appButton(
                     buttonName: "Register",
                     isLogin: false,
+                    context: context,
                   ),
                 )
               ],

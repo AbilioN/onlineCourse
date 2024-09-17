@@ -1,5 +1,6 @@
 import 'package:another/common/utils/colors.dart';
 import 'package:another/common/widgets/app_shadows.dart';
+import 'package:another/common/widgets/components.dart';
 import 'package:another/common/widgets/text_widgets.dart';
 import 'package:flutter/material.dart';
 
@@ -9,9 +10,20 @@ class ButtonWidgets {
     double height = 50,
     String buttonName = "",
     bool isLogin = true,
+    BuildContext? context,
   }) {
     return GestureDetector(
-      onTap: () {},
+      onTap: () {
+        Navigator.push(
+            context!,
+            MaterialPageRoute(
+                builder: (context) => Scaffold(
+                      appBar: Components.buildAppBar(),
+                      body: Container(
+                        color: Colors.red,
+                      ),
+                    )));
+      },
       child: Container(
         width: 325,
         height: 50,
