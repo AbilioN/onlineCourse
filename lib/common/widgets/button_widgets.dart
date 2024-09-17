@@ -14,7 +14,7 @@ class ButtonWidgets {
   }) {
     return GestureDetector(
       onTap: () {
-        Navigator.pushNamed(context!, "/signIn");
+        Navigator.pushNamed(context!, "/signUp");
 
         // Navigator.push(
         //     context!,

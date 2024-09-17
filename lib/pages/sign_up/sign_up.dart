@@ -17,9 +17,8 @@ class SignUp extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    SignInComponents.thirdPartyLogin(),
                     const Center(
-                      child: Text14(text: "Or use your email to Login"),
+                      child: Text14(text: "Or use your email to Login22222"),
                     ),
                     const SizedBox(
                       height: 15,
