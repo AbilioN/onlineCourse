@@ -7,6 +7,10 @@ import 'package:flutter/material.dart';
 class SignUp extends StatelessWidget {
   const SignUp({super.key});
 
+  void handleRegister() {
+    print("handle");
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -75,6 +79,8 @@ class SignUp extends StatelessWidget {
                     Center(
                       child: ButtonWidgets.appButton(
                         buttonName: "Register",
+                        context: context,
+                        callback: handleRegister,
                       ),
                     )
                   ],

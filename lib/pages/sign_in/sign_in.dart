@@ -58,11 +58,13 @@ class SignIn extends StatelessWidget {
                 ),
                 Center(
                   child: ButtonWidgets.appButton(
-                    buttonName: "Register",
-                    isLogin: false,
-                    context: context,
-                  ),
-                )
+                      buttonName: "Register",
+                      isLogin: false,
+                      context: context,
+                      callback: () {
+                        Navigator.pushNamed(context, "/signUp");
+                      }),
+                ),
               ],
             ),
           ),

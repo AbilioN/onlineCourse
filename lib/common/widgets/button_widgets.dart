@@ -11,21 +11,10 @@ class ButtonWidgets {
     String buttonName = "",
     bool isLogin = true,
     BuildContext? context,
+    void Function()? callback,
   }) {
     return GestureDetector(
-      onTap: () {
-        Navigator.pushNamed(context!, "/signUp");
-
-        // Navigator.push(
-        //     context!,
-        //     MaterialPageRoute(
-        //         builder: (context) => Scaffold(
-        //               appBar: Components.buildAppBar(),
-        //               body: Container(
-        //                 color: Colors.red,
-        //               ),
-        //             )));
-      },
+      onTap: callback,
       child: Container(
         width: 325,
         height: 50,
