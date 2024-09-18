@@ -60,7 +60,7 @@ class Text14 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       text,
-      textAlign: TextAlign.center,
+      textAlign: TextAlign.start,
       style: TextStyle(
         color: color,
         fontSize: 14,
