@@ -3,18 +3,33 @@ import 'package:another/common/widgets/components.dart';
 import 'package:another/common/widgets/text_widgets.dart';
 import 'package:another/pages/sign_in/widgets/sign_in_widgets.dart';
 import 'package:another/pages/sign_up/notifier/register_notifier.dart';
+import 'package:another/pages/sign_up/sign_up_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class SignUp extends ConsumerWidget {
+class SignUp extends ConsumerStatefulWidget {
   const SignUp({super.key});
+
+  @override
+  ConsumerState<SignUp> createState() => _SignUpState();
+}
+
+class _SignUpState extends ConsumerState<SignUp> {
+  late SignUpController _controller;
+  @override
+  void initState() {
+    // TODO: implement initState
+
+    _controller = SignUpController(ref: ref);
+    super.initState();
+  }
 
   void handleRegister() {
     print("handle");
   }
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  Widget build(BuildContext context) {
     final registerProvider = ref.watch(registerNotifierProvider);
 
     return Container(
@@ -99,7 +114,7 @@ class SignUp extends ConsumerWidget {
                       child: ButtonWidgets.appButton(
                         buttonName: "Register",
                         context: context,
-                        callback: handleRegister,
+                        callback: () => _controller.handleSignUp(),
                       ),
                     )
                   ],
