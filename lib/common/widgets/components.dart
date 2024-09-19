@@ -26,6 +26,7 @@ class Components {
     String iconName = "",
     String hintText = "Type in your info",
     bool obscureTexts = false,
+    void Function(String value)? callback,
   }) {
     return Container(
       padding: const EdgeInsets.only(left: 25, right: 25),
@@ -51,6 +52,7 @@ class Components {
                   height: 50,
                   child: TextField(
                     keyboardType: TextInputType.multiline,
+                    onChanged: (value) => callback!(value),
                     decoration: InputDecoration(
                       hintText: hintText,
                       border: const OutlineInputBorder(
@@ -70,7 +72,6 @@ class Components {
                         color: Colors.transparent,
                       )),
                     ),
-                    onChanged: (value) {},
                     maxLines: 1,
                     autocorrect: false,
                     obscureText: obscureTexts,
