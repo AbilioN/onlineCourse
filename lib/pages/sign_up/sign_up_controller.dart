@@ -1,3 +1,4 @@
+import 'package:another/common/widgets/popup_messages.dart';
 import 'package:another/pages/sign_up/notifier/register_notifier.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -11,10 +12,22 @@ class SignUpController {
 
     String name = state.userName;
     String email = state.email;
-    // String name = state.userName;
-    // String name = state.userName;
+    String password = state.password;
+    String passwordConfirmation = state.passwordConfirmation;
 
-    print("Your name is $name");
-    print("Your email is $email");
+    if (state.userName.length < 6 || name.length < 6) {
+      PopUpMessager.toastInfo("Your name is too short");
+      return;
+    }
+    if (state.email.isEmpty || email.isEmpty) {
+      PopUpMessager.toastInfo("Your email is empty");
+      return;
+    }
+    if (state.password != state.passwordConfirmation) {
+      PopUpMessager.toastInfo("Your password didn`t match");
+      return;
+    }
+
+    
   }
 }

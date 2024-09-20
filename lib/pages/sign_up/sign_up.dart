@@ -35,7 +35,7 @@ class _SignUpState extends ConsumerState<SignUp> {
     return Container(
       child: SafeArea(
           child: Scaffold(
-              appBar: Components.buildAppBar(),
+              appBar: Components.buildAppBar(title: "SignUp"),
               body: SingleChildScrollView(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,

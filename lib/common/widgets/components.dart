@@ -5,7 +5,7 @@ import 'package:another/common/widgets/text_widgets.dart';
 import 'package:flutter/material.dart';
 
 class Components {
-  static AppBar buildAppBar() {
+  static AppBar buildAppBar({String title = ""}) {
     return AppBar(
       bottom: PreferredSize(
         preferredSize: const Size.fromHeight(1),
@@ -14,8 +14,8 @@ class Components {
           color: Colors.grey.withOpacity(0.3),
         ),
       ),
-      title: const Text16(
-        text: "Login",
+      title: Text16(
+        text: title,
         color: AppColors.primaryText,
       ),
     );
