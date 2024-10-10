@@ -1,3 +1,4 @@
+import 'package:another/common/global_loader/global_loader.dart';
 import 'package:another/common/widgets/popup_messages.dart';
 import 'package:another/pages/sign_up/notifier/register_notifier.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -36,13 +37,20 @@ class SignUpController {
       PopUpMessager.toastInfo("Your password is empty");
       return;
     }
+
+    ref.read(appLoaderProvider.notifier).setLoaderValue(true);
     var context = Navigator.of(ref.context);
+
+    final loader = ref.watch(appLoaderProvider);
 
     try {
       final credential = await FirebaseAuth.instance
           .createUserWithEmailAndPassword(email: email, password: password);
+      // ref.read(appLoaderProvider.notifier).setLoaderValue(true);
+
       if (kDebugMode) {
         if (credential.user != null) {
+          print(credential.user);
           await credential.user?.sendEmailVerification();
           await credential.user?.updateDisplayName(name);
           // get server photo url
@@ -57,5 +65,7 @@ class SignUpController {
         print(e);
       }
     }
+
+    ref.read(appLoaderProvider.notifier).setLoaderValue(true);
   }
 }
