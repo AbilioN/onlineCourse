@@ -125,10 +125,10 @@ class _SignUpState extends ConsumerState<SignUp> {
                     ],
                   ),
                 )
-              : Center(
+              : const Center(
                   child: CircularProgressIndicator(
                     backgroundColor: Colors.blue,
-                    color: AppColors.primaryBackground,
+                    color: AppColors.primaryElement,
                   ),
                 ),
         ),

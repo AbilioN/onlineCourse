@@ -41,33 +41,35 @@ class SignUpController {
     }
 
     ref.read(appLoaderProvider.notifier).setLoaderValue(true);
-    var context = Navigator.of(ref.context);
 
-    final loader = ref.watch(appLoaderProvider);
+    Future.delayed(Duration(seconds: 2), () async {
+      try {
+        var context = Navigator.of(ref.context);
 
-    try {
-      final credential = await FirebaseAuth.instance
-          .createUserWithEmailAndPassword(email: email, password: password);
-      // ref.read(appLoaderProvider.notifier).setLoaderValue(true);
+        final credential = await FirebaseAuth.instance
+            .createUserWithEmailAndPassword(email: email, password: password);
+        // ref.read(appLoaderProvider.notifier).setLoaderValue(true);
 
-      if (kDebugMode) {
-        if (credential.user != null) {
-          print(credential.user);
-          await credential.user?.sendEmailVerification();
-          await credential.user?.updateDisplayName(name);
-          // get server photo url
-          // setUserPhotoUrl
-          PopUpMessager.toastInfo("An email has been sent to you");
-          // Navigator.pushNamed(context, "/signIn");
-          context.pop();
+        if (kDebugMode) {
+          if (credential.user != null) {
+            print(credential.user);
+            await credential.user?.sendEmailVerification();
+            await credential.user?.updateDisplayName(name);
+            // get server photo url
+            // setUserPhotoUrl
+            PopUpMessager.toastInfo("An email has been sent to you");
+            // Navigator.pushNamed(context, "/signIn");
+            context.pop();
+          }
+        }
+      } catch (e) {
+        if (kDebugMode) {
+          print(e);
         }
       }
-    } catch (e) {
-      if (kDebugMode) {
-        print(e);
-      }
-    }
-
+    });
     ref.read(appLoaderProvider.notifier).setLoaderValue(true);
+
+    // final loader = ref.watch(appLoaderProvider);
   }
 }
