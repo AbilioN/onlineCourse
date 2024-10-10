@@ -23,10 +23,12 @@ class SignUpController {
       PopUpMessager.toastInfo("Your name is too short");
       return;
     }
+
     if (state.email.isEmpty || email.isEmpty) {
       PopUpMessager.toastInfo("Your email is empty");
       return;
     }
+
     if ((state.password != state.passwordConfirmation) ||
         password != passwordConfirmation) {
       PopUpMessager.toastInfo("Your password didn`t match");
