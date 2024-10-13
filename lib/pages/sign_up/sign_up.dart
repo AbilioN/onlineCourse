@@ -110,11 +110,9 @@ class _SignUpState extends ConsumerState<SignUp> {
                             text:
                                 "By creating an account you are agreeing with our terms of condition"),
                       ),
-
                       const SizedBox(
                         height: 100,
                       ),
-
                       Center(
                         child: ButtonWidgets.appButton(
                           buttonName: "Register",

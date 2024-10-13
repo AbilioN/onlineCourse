@@ -64,11 +64,12 @@ class SignUpController {
         }
       } catch (e) {
         if (kDebugMode) {
+          ref.read(appLoaderProvider.notifier).setLoaderValue(false);
           print(e);
         }
       }
     });
-    ref.read(appLoaderProvider.notifier).setLoaderValue(true);
+    // ref.read(appLoaderProvider.notifier).setLoaderValue(true);
 
     // final loader = ref.watch(appLoaderProvider);
   }
